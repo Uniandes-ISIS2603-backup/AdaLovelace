@@ -128,7 +128,7 @@ public class ReviewLogicTest {
 
         for (int i = 0; i < 3; i++) {
             BookEntity entity = factory.manufacturePojo(BookEntity.class);
-            entity.setEditorial(editorialData.get(i));
+            //entity.setEditorial(editorialData.get(i));
             em.persist(entity);
             dataBook.add(entity);
         }

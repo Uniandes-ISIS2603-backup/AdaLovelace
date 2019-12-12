@@ -59,17 +59,13 @@ public class BookEntity extends BaseEntity implements Serializable {
     private String genre;
 
     
-    @PodamExclude
-    @ManyToOne
-    private EditorialEntity editorial;
+    private String editorial;
 
     @PodamExclude
     @OneToMany(mappedBy = "book", cascade = CascadeType.PERSIST, orphanRemoval = true)
     private List<ReviewEntity> reviews = new ArrayList<ReviewEntity>();
 
-    @PodamExclude
-    @ManyToMany
-    private List<AuthorEntity> authors = new ArrayList<AuthorEntity>();
+    private String author;
 
     public String getGenre() {
         return genre;
@@ -227,7 +223,7 @@ public class BookEntity extends BaseEntity implements Serializable {
      *
      * @return Una entidad de editorial.
      */
-    public EditorialEntity getEditorial() {
+    public String getEditorial() {
         return editorial;
     }
 
@@ -236,7 +232,7 @@ public class BookEntity extends BaseEntity implements Serializable {
      *
      * @param editorialEntity La nueva editorial.
      */
-    public void setEditorial(EditorialEntity editorialEntity) {
+    public void setEditorial(String editorialEntity) {
         this.editorial = editorialEntity;
     }
 
@@ -263,8 +259,8 @@ public class BookEntity extends BaseEntity implements Serializable {
      *
      * @return the authors
      */
-    public List<AuthorEntity> getAuthors() {
-        return authors;
+    public String getAuthor() {
+        return author;
     }
 
     /**
@@ -272,7 +268,7 @@ public class BookEntity extends BaseEntity implements Serializable {
      *
      * @param authors the authors to set
      */
-    public void setAuthors(List<AuthorEntity> authors) {
-        this.authors = authors;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 }

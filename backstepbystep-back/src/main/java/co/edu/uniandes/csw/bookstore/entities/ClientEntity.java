@@ -25,7 +25,11 @@ public class ClientEntity extends BaseEntity{
     
 @OneToMany(mappedBy = "client")
     private List<SaleEntity> compras = new ArrayList<SaleEntity>();
-    /**
+    public ClientEntity()
+    {
+        
+    }
+/**
      * @return the name
      */
     public String getName() {

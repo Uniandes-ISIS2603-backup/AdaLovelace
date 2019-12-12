@@ -38,7 +38,7 @@ public class BookAuthorLogic {
         LOGGER.log(Level.INFO, "Inicia proceso de asociarle un autor al libro con id = {0}", booksId);
         AuthorEntity authorEntity = authorPersistence.find(authorsId);
         BookEntity bookEntity = bookPersistence.find(booksId);
-        bookEntity.getAuthors().add(authorEntity);
+        //bookEntity.getAuthors().add(authorEntity);
         LOGGER.log(Level.INFO, "Termina proceso de asociarle un autor al libro con id = {0}", booksId);
         return authorPersistence.find(authorsId);
     }
@@ -53,7 +53,8 @@ public class BookAuthorLogic {
      */
     public List<AuthorEntity> getAuthors(Long booksId) {
         LOGGER.log(Level.INFO, "Inicia proceso de consultar todos los autores del libro con id = {0}", booksId);
-        return bookPersistence.find(booksId).getAuthors();
+        //return bookPersistence.find(booksId).getAuthors();
+        return null;
     }
 
     /**
@@ -65,13 +66,13 @@ public class BookAuthorLogic {
      */
     public AuthorEntity getAuthor(Long booksId, Long authorsId) {
         LOGGER.log(Level.INFO, "Inicia proceso de consultar un autor del libro con id = {0}", booksId);
-        List<AuthorEntity> authors = bookPersistence.find(booksId).getAuthors();
+        //List<AuthorEntity> authors = bookPersistence.find(booksId).getAuthors();
         AuthorEntity authorEntity = authorPersistence.find(authorsId);
-        int index = authors.indexOf(authorEntity);
+        //int index = authors.indexOf(authorEntity);
         LOGGER.log(Level.INFO, "Termina proceso de consultar un autor del libro con id = {0}", booksId);
-        if (index >= 0) {
+        /*if (index >= 0) {
             return authors.get(index);
-        }
+        }*/
         return null;
     }
 
@@ -86,9 +87,10 @@ public class BookAuthorLogic {
     public List<AuthorEntity> replaceAuthors(Long booksId, List<AuthorEntity> list) {
         LOGGER.log(Level.INFO, "Inicia proceso de reemplazar los autores del libro con id = {0}", booksId);
         BookEntity bookEntity = bookPersistence.find(booksId);
-        bookEntity.setAuthors(list);
+        //bookEntity.setAuthors(list);
         LOGGER.log(Level.INFO, "Termina proceso de reemplazar los autores del libro con id = {0}", booksId);
-        return bookPersistence.find(booksId).getAuthors();
+        //return bookPersistence.find(booksId).getAuthors();
+        return null;
     }
 
     /**
@@ -101,7 +103,7 @@ public class BookAuthorLogic {
         LOGGER.log(Level.INFO, "Inicia proceso de borrar un autor del libro con id = {0}", booksId);
         AuthorEntity authorEntity = authorPersistence.find(authorsId);
         BookEntity bookEntity = bookPersistence.find(booksId);
-        bookEntity.getAuthors().remove(authorEntity);
+        //bookEntity.getAuthors().remove(authorEntity);
         LOGGER.log(Level.INFO, "Termina proceso de borrar un autor del libro con id = {0}", booksId);
     }
 }

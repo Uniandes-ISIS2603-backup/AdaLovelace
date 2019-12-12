@@ -39,7 +39,7 @@ public class AuthorBooksLogic {
         LOGGER.log(Level.INFO, "Inicia proceso de asociarle un libro al autor con id = {0}", authorsId);
         AuthorEntity authorEntity = authorPersistence.find(authorsId);
         BookEntity bookEntity = bookPersistence.find(booksId);
-        bookEntity.getAuthors().add(authorEntity);
+        //bookEntity.getAuthors().add(authorEntity);
         LOGGER.log(Level.INFO, "Termina proceso de asociarle un libro al autor con id = {0}", authorsId);
         return bookPersistence.find(booksId);
     }
@@ -89,15 +89,15 @@ public class AuthorBooksLogic {
         LOGGER.log(Level.INFO, "Inicia proceso de reemplazar los libros asocidos al author con id = {0}", authorId);
         AuthorEntity authorEntity = authorPersistence.find(authorId);
         List<BookEntity> bookList = bookPersistence.findAll();
-        for (BookEntity book : bookList) {
+        /*for (BookEntity book : bookList) {
             if (books.contains(book)) {
                 if (!book.getAuthors().contains(authorEntity)) {
                     book.getAuthors().add(authorEntity);
                 }
             } else {
-                book.getAuthors().remove(authorEntity);
+                //book.getAuthors().remove(authorEntity);
             }
-        }
+        }*/
         authorEntity.setBooks(books);
         LOGGER.log(Level.INFO, "Termina proceso de reemplazar los libros asocidos al author con id = {0}", authorId);
         return authorEntity.getBooks();
@@ -113,7 +113,7 @@ public class AuthorBooksLogic {
         LOGGER.log(Level.INFO, "Inicia proceso de borrar un libro del author con id = {0}", authorsId);
         AuthorEntity authorEntity = authorPersistence.find(authorsId);
         BookEntity bookEntity = bookPersistence.find(booksId);
-        bookEntity.getAuthors().remove(authorEntity);
+        //bookEntity.getAuthors().remove(authorEntity);
         LOGGER.log(Level.INFO, "Termina proceso de borrar un libro del author con id = {0}", authorsId);
     }
 }

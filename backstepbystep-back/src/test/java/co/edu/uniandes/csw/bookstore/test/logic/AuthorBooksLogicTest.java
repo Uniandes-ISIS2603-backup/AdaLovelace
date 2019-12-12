@@ -111,8 +111,8 @@ public class AuthorBooksLogicTest {
 
         for (int i = 0; i < 3; i++) {
             BookEntity entity = factory.manufacturePojo(BookEntity.class);
-            entity.setAuthors(new ArrayList<>());
-            entity.getAuthors().add(author);
+            //entity.setAuthors(new ArrayList<>());
+            //entity.getAuthors().add(author);
             em.persist(entity);
             data.add(entity);
             author.getBooks().add(entity);
@@ -128,7 +128,7 @@ public class AuthorBooksLogicTest {
     @Test
     public void addBookTest() throws BusinessLogicException {
         BookEntity newBook = factory.manufacturePojo(BookEntity.class);
-        newBook.setEditorial(editorial);
+        //newBook.setEditorial(editorial);
         bookLogic.createBook(newBook);
         BookEntity bookEntity = authorBookLogic.addBook(author.getId(), newBook.getId());
         Assert.assertNotNull(bookEntity);
@@ -190,9 +190,9 @@ public class AuthorBooksLogicTest {
         List<BookEntity> nuevaLista = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             BookEntity entity = factory.manufacturePojo(BookEntity.class);
-            entity.setAuthors(new ArrayList<>());
-            entity.getAuthors().add(author);
-            entity.setEditorial(editorial);
+            //entity.setAuthors(new ArrayList<>());
+            //entity.getAuthors().add(author);
+            //entity.setEditorial(editorial);
             bookLogic.createBook(entity);
             nuevaLista.add(entity);
         }
