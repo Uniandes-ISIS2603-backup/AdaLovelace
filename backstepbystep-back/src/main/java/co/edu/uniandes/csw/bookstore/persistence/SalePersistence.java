@@ -42,15 +42,11 @@ public class SalePersistence {
         Query q = em.createQuery("select u from SaleEntity u");
         return q.getResultList();
     }
-
-    
-    public List<SaleEntity> findByClientId(Long clientId) {
-        LOGGER.log(Level.INFO, "Consultando ventas con idCliente={0}", clientId);
-        Query q = em.createQuery("select u from SaleEntity u where u.client.id =  :clientId");
-        q.setParameter("clientId", clientId);
-        return q.getResultList();
+ 
+     public SaleEntity find(Long saleId) {
+        LOGGER.log(Level.INFO, "Consultando venta con id={0}", saleId);
+        return em.find(SaleEntity.class, saleId);
     }
-
     
     public SaleEntity update(SaleEntity saleEntity) {
         LOGGER.log(Level.INFO, "Actualizando venta con id={0}", saleEntity.getId());
