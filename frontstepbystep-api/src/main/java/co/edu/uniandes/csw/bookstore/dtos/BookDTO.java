@@ -76,8 +76,7 @@ public class BookDTO implements Serializable {
     private String isbn;
     private String image;
     private String description;
-    @XmlJavaTypeAdapter(DateAdapter.class)
-    private Date publishingdate;
+    private String publishingdate;
 
     private Integer availability;
     private Integer totRatings;
@@ -309,7 +308,7 @@ public class BookDTO implements Serializable {
      *
      * @return the publishingdate
      */
-    public Date getPublishingdate() {
+    public String getPublishingdate() {
         return publishingdate;
     }
 
@@ -318,7 +317,7 @@ public class BookDTO implements Serializable {
      *
      * @param publishingdate the publishingdate to set
      */
-    public void setPublishingdate(Date publishingdate) {
+    public void setPublishingdate(String publishingdate) {
         this.publishingdate = publishingdate;
     }
 

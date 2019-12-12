@@ -213,4 +213,19 @@ public class BookPersistenceTest {
         newEntity = bookPersistence.findByISBN(null);
         Assert.assertNull(newEntity);
     }
+    
+    @Test
+    public void findByGenre()
+    {
+        String genre = data.get(0).getGenre();
+     
+        
+        List<BookEntity> list = bookPersistence.findByGenre(genre);
+        
+        Assert.assertNotNull(list);
+        Assert.assertEquals(1, list.size());
+        Assert.assertEquals(list.get(0).getGenre(),data.get(0).getGenre() );
+        
+        
+    }
 }
