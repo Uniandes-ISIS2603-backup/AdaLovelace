@@ -88,7 +88,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public class AuthorDetailDTO extends AuthorDTO implements Serializable {
 
     // relación  cero o muchos libros
-    private List<BookDTO> books;
+    
 
     // relación  cero o muchos premios 
     private List<PrizeDTO> prizes;
@@ -108,10 +108,6 @@ public class AuthorDetailDTO extends AuthorDTO implements Serializable {
     public AuthorDetailDTO(AuthorEntity authorEntity) {
         super(authorEntity);
         if (authorEntity != null) {
-            books = new ArrayList<>();
-            for (BookEntity entityBooks : authorEntity.getBooks()) {
-                books.add(new BookDTO(entityBooks));
-            }
             prizes = new ArrayList();
             for (PrizeEntity entityPrize : authorEntity.getPrizes()) {
                 prizes.add(new PrizeDTO(entityPrize));
@@ -129,13 +125,7 @@ public class AuthorDetailDTO extends AuthorDTO implements Serializable {
     @Override
     public AuthorEntity toEntity() {
         AuthorEntity authorEntity = super.toEntity();
-        if (books != null) {
-            List<BookEntity> booksEntity = new ArrayList<>();
-            for (BookDTO dtoBook : books) {
-                booksEntity.add(dtoBook.toEntity());
-            }
-            authorEntity.setBooks(booksEntity);
-        }
+
         if (prizes != null) {
             List<PrizeEntity> prizesEntity = new ArrayList<>();
             for (PrizeDTO dtoPrize : prizes) {
@@ -146,23 +136,6 @@ public class AuthorDetailDTO extends AuthorDTO implements Serializable {
         return authorEntity;
     }
 
-    /**
-     * Obtiene la lista de libros del autor
-     *
-     * @return the books
-     */
-    public List<BookDTO> getBooks() {
-        return books;
-    }
-
-    /**
-     * Modifica la lista de libros para el autor
-     *
-     * @param books the books to set
-     */
-    public void setBooks(List<BookDTO> books) {
-        this.books = books;
-    }
 
     /**
      * Obtiene la lista de premios del autor

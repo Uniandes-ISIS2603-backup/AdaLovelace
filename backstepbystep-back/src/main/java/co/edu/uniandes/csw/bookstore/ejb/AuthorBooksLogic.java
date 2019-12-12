@@ -54,7 +54,8 @@ public class AuthorBooksLogic {
      */
     public List<BookEntity> getBooks(Long authorsId) {
         LOGGER.log(Level.INFO, "Inicia proceso de consultar todos los libros del autor con id = {0}", authorsId);
-        return authorPersistence.find(authorsId).getBooks();
+       // return authorPersistence.find(authorsId).getBooks();
+       return null;
     }
 
     /**
@@ -66,7 +67,7 @@ public class AuthorBooksLogic {
      * @throws BusinessLogicException Si el libro no está asociado al autor
      */
     public BookEntity getBook(Long authorsId, Long booksId) throws BusinessLogicException {
-        LOGGER.log(Level.INFO, "Inicia proceso de consultar el libro con id = {0} del autor con id = " + authorsId, booksId);
+        /*LOGGER.log(Level.INFO, "Inicia proceso de consultar el libro con id = {0} del autor con id = " + authorsId, booksId);
         List<BookEntity> books = authorPersistence.find(authorsId).getBooks();
         BookEntity bookEntity = bookPersistence.find(booksId);
         int index = books.indexOf(bookEntity);
@@ -74,7 +75,8 @@ public class AuthorBooksLogic {
         if (index >= 0) {
             return books.get(index);
         }
-        throw new BusinessLogicException("El libro no está asociado al autor");
+        throw new BusinessLogicException("El libro no está asociado al autor");*/
+        return null;
     }
 
     /**
@@ -98,9 +100,10 @@ public class AuthorBooksLogic {
                 //book.getAuthors().remove(authorEntity);
             }
         }*/
-        authorEntity.setBooks(books);
+        //authorEntity.setBooks(books);
         LOGGER.log(Level.INFO, "Termina proceso de reemplazar los libros asocidos al author con id = {0}", authorId);
-        return authorEntity.getBooks();
+        //return authorEntity.getBooks();
+        return null;
     }
 
     /**

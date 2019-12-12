@@ -13,12 +13,14 @@ import co.edu.uniandes.csw.bookstore.persistence.ClientPersistence;
 import co.edu.uniandes.csw.bookstore.persistence.SalePersistence;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /**
  *
  * @author Ada Lovelace
  */
+@Stateless
 public class SalesClientLogic {
     
     private static final Logger LOGGER = Logger.getLogger(SalesClientLogic.class.getName());
