@@ -85,13 +85,5 @@ public class SaleLogic {
         LOGGER.log(Level.INFO, "Termina proceso de borrar venta con id = {0}", saleId);
     }
 
-    /**
-     * Verifica que el ISBN no sea invalido.
-     *
-     * @param isbn a verificar
-     * @return true si el ISBN es valido.
-     */
-    private boolean validateISBN(String isbn) {
-        return !(isbn == null || isbn.isEmpty());
-    }
+   
 }

@@ -75,7 +75,7 @@ public class ReviewDTO implements Serializable {
 
     private Long id;
     private String name;
-    private String source;
+    private int score;
     private String description;
 
     /*
@@ -99,7 +99,7 @@ public class ReviewDTO implements Serializable {
         if (reviewEntity != null) {
             this.id = reviewEntity.getId();
             this.name = reviewEntity.getName();
-            this.source = reviewEntity.getSource();
+            this.score = reviewEntity.getScore();
             this.description = reviewEntity.getDescription();
             if (reviewEntity.getBook() != null) {
                 this.book = new BookDTO(reviewEntity.getBook());
@@ -118,7 +118,7 @@ public class ReviewDTO implements Serializable {
         ReviewEntity reviewEntity = new ReviewEntity();
         reviewEntity.setId(this.id);
         reviewEntity.setName(this.name);
-        reviewEntity.setSource(this.source);
+        reviewEntity.setScore(this.score);
         reviewEntity.setDescription(this.description);
         if (this.book != null) {
             reviewEntity.setBook(this.book.toEntity());
@@ -167,8 +167,8 @@ public class ReviewDTO implements Serializable {
      *
      * @return the source
      */
-    public String getSource() {
-        return source;
+    public int getScore() {
+        return score;
     }
 
     /**
@@ -176,8 +176,8 @@ public class ReviewDTO implements Serializable {
      *
      * @param source the source to set
      */
-    public void setSource(String source) {
-        this.source = source;
+    public void setScore(int score) {
+        this.score = score;
     }
 
     /**
