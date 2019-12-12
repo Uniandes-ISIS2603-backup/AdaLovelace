@@ -155,7 +155,7 @@ public class ReviewLogicTest {
         ReviewEntity entity = em.find(ReviewEntity.class, result.getId());
         Assert.assertEquals(newEntity.getId(), entity.getId());
         Assert.assertEquals(newEntity.getName(), entity.getName());
-        Assert.assertEquals(newEntity.getSource(), entity.getSource());
+        Assert.assertEquals(newEntity.getScore(), entity.getScore());
         Assert.assertEquals(newEntity.getDescription(), entity.getDescription());
     }
 
@@ -189,7 +189,7 @@ public class ReviewLogicTest {
         Assert.assertNotNull(resultEntity);
         Assert.assertEquals(entity.getId(), resultEntity.getId());
         Assert.assertEquals(entity.getName(), resultEntity.getName());
-        Assert.assertEquals(entity.getSource(), resultEntity.getSource());
+        Assert.assertEquals(entity.getScore(), resultEntity.getScore());
         Assert.assertEquals(entity.getDescription(), resultEntity.getDescription());
     }
 
@@ -209,7 +209,7 @@ public class ReviewLogicTest {
 
         Assert.assertEquals(pojoEntity.getId(), resp.getId());
         Assert.assertEquals(pojoEntity.getName(), resp.getName());
-        Assert.assertEquals(pojoEntity.getSource(), resp.getSource());
+        Assert.assertEquals(pojoEntity.getScore(), resp.getScore());
         Assert.assertEquals(pojoEntity.getDescription(), resp.getDescription());
     }
 
