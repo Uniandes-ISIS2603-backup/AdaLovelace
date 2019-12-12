@@ -27,7 +27,6 @@ import co.edu.uniandes.csw.bookstore.dtos.BookDTO;
 import co.edu.uniandes.csw.bookstore.dtos.BookDetailDTO;
 import co.edu.uniandes.csw.bookstore.ejb.BookEditorialLogic;
 import co.edu.uniandes.csw.bookstore.ejb.BookLogic;
-import co.edu.uniandes.csw.bookstore.ejb.EditorialLogic;
 import co.edu.uniandes.csw.bookstore.entities.BookEntity;
 import co.edu.uniandes.csw.bookstore.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.bookstore.mappers.BusinessLogicExceptionMapper;
@@ -64,9 +63,6 @@ public class BookResource {
 
     @Inject
     private BookLogic bookLogic; // Variable para acceder a la lógica de la aplicación. Es una inyección de dependencias.
-
-    @Inject
-    private EditorialLogic editorialLogic; // Variable para acceder a la lógica de la aplicación. Es una inyección de dependencias.
 
     @Inject
     private BookEditorialLogic bookEditorialLogic; // Variable para acceder a la lógica de la aplicación. Es una inyección de dependencias.

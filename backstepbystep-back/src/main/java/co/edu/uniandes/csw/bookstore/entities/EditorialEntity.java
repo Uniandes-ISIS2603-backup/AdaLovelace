@@ -60,5 +60,4 @@ public class EditorialEntity extends BaseEntity implements Serializable {
         this.name = name;
     }
 
-  
 }

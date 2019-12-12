@@ -29,7 +29,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author Daniel B etancurth Dorado
  */
-@Path("/clients")
+@Path("/client")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 @RequestScoped
@@ -79,4 +79,4 @@ public class ClientResource {
         }
         return list;
     }
-}
+} 
