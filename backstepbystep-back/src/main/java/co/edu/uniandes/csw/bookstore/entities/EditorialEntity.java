@@ -41,10 +41,7 @@ public class EditorialEntity extends BaseEntity implements Serializable {
 
     private String name;
 
-<<<<<<< HEAD
-=======
 
->>>>>>> f39b44b17cfdb2def6bd2d11a3ec16365ead8e02
     /**
      * Devuelve el nombre de la editorial.
      *
@@ -63,8 +60,4 @@ public class EditorialEntity extends BaseEntity implements Serializable {
         this.name = name;
     }
 
-<<<<<<< HEAD
-=======
-  
->>>>>>> f39b44b17cfdb2def6bd2d11a3ec16365ead8e02
 }
