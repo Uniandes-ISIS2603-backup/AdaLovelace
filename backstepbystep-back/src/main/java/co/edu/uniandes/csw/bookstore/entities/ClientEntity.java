@@ -5,7 +5,10 @@
  */
 package co.edu.uniandes.csw.bookstore.entities;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -20,8 +23,8 @@ public class ClientEntity extends BaseEntity{
     private String documentNumber;
     private String directionResidence;
     
-    //private SaleEntity compras;
-
+@OneToMany(mappedBy = "client")
+    private List<SaleEntity> clientes = new ArrayList<SaleEntity>();
     /**
      * @return the name
      */
@@ -104,6 +107,20 @@ public class ClientEntity extends BaseEntity{
      */
     public void setDirectionResidence(String directionResidence) {
         this.directionResidence = directionResidence;
+    }
+
+    /**
+     * @return the clientes
+     */
+    public List<SaleEntity> getClientes() {
+        return clientes;
+    }
+
+    /**
+     * @param clientes the clientes to set
+     */
+    public void setClientes(List<SaleEntity> clientes) {
+        this.clientes = clientes;
     }
     
     
