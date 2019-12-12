@@ -6,7 +6,6 @@
 package co.edu.uniandes.csw.bookstore.dtos;
 
 import co.edu.uniandes.csw.bookstore.adapters.DateAdapter;
-import co.edu.uniandes.csw.bookstore.entities.BookEntity;
 import co.edu.uniandes.csw.bookstore.entities.SaleEntity;
 import java.io.Serializable;
 import java.util.Date;
@@ -23,7 +22,7 @@ public class SaleDTO implements Serializable {
     @XmlJavaTypeAdapter (DateAdapter.class)
     private Date saleDate;
     
-    //private ClientDTO client;
+    private ClientDTO client;
     
     public SaleDTO(){
         
@@ -34,11 +33,11 @@ public class SaleDTO implements Serializable {
             this.id = saleEntity.getId();
             this.valueTot = saleEntity.getValue();
             this.saleDate = saleEntity.getDate();
-            //if (saleEntity.getClient()!= null) {
-            //    this.client = new ClientDTO(saleEntity.getClient());
-            //} else {
-            //    this.client = null;
-            //}
+            if (saleEntity.getClient()!= null) {
+                this.client = new ClientDTO(saleEntity.getClient());
+            } else {
+                this.client = null;
+            }
    
             
         }
@@ -51,9 +50,9 @@ public class SaleDTO implements Serializable {
         saleEntity.setValue(this.valueTot);
         saleEntity.setDate(saleDate);
         
-        //if (this.client != null) {
-        //    saleEntity.setClient(this.client.toEntity());
-        //}
+        if (this.getClient() != null) {
+            saleEntity.setClient(this.getClient().toEntity());
+        }
        
         return saleEntity;
     }
@@ -69,6 +68,20 @@ public class SaleDTO implements Serializable {
      */
     public void setId(Long id) {
         this.id = id;
+    }
+
+    /**
+     * @return the client
+     */
+    public ClientDTO getClient() {
+        return client;
+    }
+
+    /**
+     * @param client the client to set
+     */
+    public void setClient(ClientDTO client) {
+        this.client = client;
     }
 
     /**
