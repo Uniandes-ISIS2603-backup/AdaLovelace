@@ -19,8 +19,8 @@ public class SaleDTO implements Serializable {
     
     private Long id;
     private Integer valueTot;
-    @XmlJavaTypeAdapter (DateAdapter.class)
-    private Date saleDate;
+    
+    private String saleDate;
     
     private ClientDTO client;
     
@@ -101,14 +101,14 @@ public class SaleDTO implements Serializable {
     /**
      * @return the date
      */
-    public Date getDate() {
+    public String getDate() {
         return saleDate;
     }
 
     /**
      * @param date the date to set
      */
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.saleDate = date;
     }
 }
