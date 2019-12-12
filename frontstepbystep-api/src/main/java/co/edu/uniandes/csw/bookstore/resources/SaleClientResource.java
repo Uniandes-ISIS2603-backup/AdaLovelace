@@ -5,14 +5,12 @@
  */
 package co.edu.uniandes.csw.bookstore.resources;
 
-import co.edu.uniandes.csw.bookstore.dtos.BookDetailDTO;
+
 import co.edu.uniandes.csw.bookstore.dtos.ClientDTO;
-import co.edu.uniandes.csw.bookstore.dtos.EditorialDTO;
+
 import co.edu.uniandes.csw.bookstore.dtos.SaleDetailDTO;
-import co.edu.uniandes.csw.bookstore.ejb.BookEditorialLogic;
-import co.edu.uniandes.csw.bookstore.ejb.BookLogic;
+
 import co.edu.uniandes.csw.bookstore.ejb.ClientLogic;
-import co.edu.uniandes.csw.bookstore.ejb.EditorialLogic;
 import co.edu.uniandes.csw.bookstore.ejb.SaleLogic;
 import co.edu.uniandes.csw.bookstore.ejb.SalesClientLogic;
 import java.util.logging.Level;

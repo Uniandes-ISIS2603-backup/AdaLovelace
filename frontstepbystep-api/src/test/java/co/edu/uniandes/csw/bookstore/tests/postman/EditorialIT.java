@@ -25,7 +25,6 @@ package co.edu.uniandes.csw.bookstore.tests.postman;
 
 import co.edu.uniandes.csw.bookstore.mappers.BusinessLogicExceptionMapper;
 import co.edu.uniandes.csw.bookstore.dtos.EditorialDTO;
-import co.edu.uniandes.csw.bookstore.resources.EditorialResource;
 import co.edu.uniandes.csw.postman.tests.PostmanTestBuilder;
 import java.io.File;
 import java.io.IOException;
@@ -56,7 +55,6 @@ public class EditorialIT {
                         .importRuntimeDependencies().resolve()
                         .withTransitivity().asFile())
                 // Se agregan los compilados de los paquetes de servicios
-                .addPackage(EditorialResource.class.getPackage()) //No importa cual recurso usar, lo importante es agregar el paquet
                 .addPackage(EditorialDTO.class.getPackage()) //No importa cual dto usar, lo importante es agregar el paquete.
                 .addPackage(BusinessLogicExceptionMapper.class.getPackage())
                 // El archivo que contiene la configuracion a la base de datos.

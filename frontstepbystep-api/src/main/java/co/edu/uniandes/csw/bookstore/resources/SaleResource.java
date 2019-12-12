@@ -13,7 +13,6 @@ import co.edu.uniandes.csw.bookstore.ejb.BookEditorialLogic;
 import co.edu.uniandes.csw.bookstore.ejb.BookLogic;
 import co.edu.uniandes.csw.bookstore.ejb.ClientLogic;
 import co.edu.uniandes.csw.bookstore.ejb.SalesClientLogic;
-import co.edu.uniandes.csw.bookstore.ejb.EditorialLogic;
 import co.edu.uniandes.csw.bookstore.ejb.SaleLogic;
 import co.edu.uniandes.csw.bookstore.entities.BookEntity;
 import co.edu.uniandes.csw.bookstore.entities.SaleEntity;
