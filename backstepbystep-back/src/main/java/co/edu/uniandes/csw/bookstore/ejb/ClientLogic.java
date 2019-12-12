@@ -26,10 +26,6 @@ public class ClientLogic {
 
  public ClientEntity createClient(ClientEntity clientEntity) throws BusinessLogicException{
         LOGGER.log(Level.INFO, "Inicia proceso de creación del cliente");
-        if(clientEntity.getAccountNumber()==null)
-        {
-            throw new BusinessLogicException("El numero de cuenta es invalido");
-        }
         if(clientEntity.getDirectionResidence()==null)
         {
             throw new BusinessLogicException("La direccion es invalido");

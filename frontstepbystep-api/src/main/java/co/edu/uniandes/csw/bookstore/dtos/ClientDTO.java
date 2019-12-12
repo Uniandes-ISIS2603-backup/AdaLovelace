@@ -15,7 +15,6 @@ import java.io.Serializable;
 public class ClientDTO implements Serializable{
    private Long id;
    private String name;
-    private String accountNumber;
     private String phoneNumber;
     private String mail;
     private String documentNumber;
@@ -30,7 +29,6 @@ public class ClientDTO implements Serializable{
         {
             this.id= clientEntity.getId();
             this.name= clientEntity.getName();
-            this.accountNumber=clientEntity.getAccountNumber();
             this.phoneNumber=clientEntity.getPhoneNumber();
             this.mail= clientEntity.getMail();
             this.documentNumber= clientEntity.getDocumentNumber();
@@ -42,7 +40,6 @@ public class ClientDTO implements Serializable{
         ClientEntity clientEntity = new ClientEntity();
         clientEntity.setId(this.getId());
         clientEntity.setName(this.getName());
-        clientEntity.setAccountNumber(this.getAccountNumber());
         clientEntity.setPhoneNumber(this.getPhoneNumber());
         clientEntity.setMail(this.getMail());
         clientEntity.setDocumentNumber(this.getDocumentNumber());
@@ -78,19 +75,7 @@ public class ClientDTO implements Serializable{
         this.name = name;
     }
 
-    /**
-     * @return the accountNumber
-     */
-    public String getAccountNumber() {
-        return accountNumber;
-    }
 
-    /**
-     * @param accountNumber the accountNumber to set
-     */
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
-    }
 
     /**
      * @return the phoneNumber
