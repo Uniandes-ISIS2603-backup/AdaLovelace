@@ -5,7 +5,6 @@
  */
 package co.edu.uniandes.csw.bookstore.resources;
 
-
 import co.edu.uniandes.csw.bookstore.dtos.ClientDTO;
 import co.edu.uniandes.csw.bookstore.dtos.SaleDetailDTO;
 import co.edu.uniandes.csw.bookstore.ejb.ClientLogic;
