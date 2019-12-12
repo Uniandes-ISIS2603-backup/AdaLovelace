@@ -79,6 +79,15 @@ public class BookDTO implements Serializable {
     @XmlJavaTypeAdapter(DateAdapter.class)
     private Date publishingdate;
 
+    private Integer availability;
+    private Integer totRatings;
+    private Integer sumRating;
+    private Double avgRating;
+    private String comments;
+    private Double discount;
+    private String genre;
+
+    
     /*
     * Relación a una editorial  
     * dado que esta tiene cardinalidad 1.
@@ -109,6 +118,15 @@ public class BookDTO implements Serializable {
             } else {
                 this.editorial = null;
             }
+            this.totRatings=bookEntity.getTotRatings();
+            this.availability=bookEntity.getAvailability();
+            this.avgRating=bookEntity.getAvgRating();
+            this.comments=bookEntity.getComments();
+            this.description=bookEntity.getDescription();
+            this.discount=bookEntity.getDiscount();
+            this.genre=bookEntity.getGenre();
+            this.sumRating=bookEntity.getSumRating();
+            
         }
     }
 
@@ -128,7 +146,72 @@ public class BookDTO implements Serializable {
         if (this.editorial != null) {
             bookEntity.setEditorial(this.editorial.toEntity());
         }
+        bookEntity.setTotRatings(this.totRatings);
+        bookEntity.setAvailability(this.availability);
+        bookEntity.setAvgRating(this.avgRating);
+        bookEntity.setComments(this.comments);
+        bookEntity.setDescription(this.description);
+        bookEntity.setDiscount(this.discount);
+        bookEntity.setGenre(this.genre);
+        bookEntity.setSumRating(this.sumRating);
         return bookEntity;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    
+    public void setAvailability(Integer availability) {
+        this.availability = availability;
+    }
+
+    public void setTotRatings(Integer TotRatings) {
+        this.totRatings = TotRatings;
+    }
+
+    public void setSumRating(Integer sumRating) {
+        this.sumRating = sumRating;
+    }
+
+    public void setAvgRating(Double avgRating) {
+        this.avgRating = avgRating;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+
+    public void setDiscount(Double discount) {
+        this.discount = discount;
+    }
+
+    public Integer getAvailability() {
+        return availability;
+    }
+
+    public Integer getTotRatings() {
+        return totRatings;
+    }
+
+    public Integer getSumRating() {
+        return sumRating;
+    }
+
+    public Double getAvgRating() {
+        return avgRating;
+    }
+
+    public String getComments() {
+        return comments;
+    }
+
+    public Double getDiscount() {
+        return discount;
     }
 
     /**

@@ -52,11 +52,12 @@ public class BookEntity extends BaseEntity implements Serializable {
     private String description;
 
     private Integer availability;
-    private Integer TotRatings;
+    private Integer totRatings;
     private Integer sumRating;
     private Double avgRating;
     private String comments;
     private Double discount;
+    private String genre;
 
     
     @PodamExclude
@@ -71,12 +72,22 @@ public class BookEntity extends BaseEntity implements Serializable {
     @ManyToMany
     private List<AuthorEntity> authors = new ArrayList<AuthorEntity>();
 
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+    
+    
+
     public void setAvailability(Integer availability) {
         this.availability = availability;
     }
 
-    public void setTotRatings(Integer TotRatings) {
-        this.TotRatings = TotRatings;
+    public void setTotRatings(Integer totRatings) {
+        this.totRatings = totRatings;
     }
 
     public void setSumRating(Integer sumRating) {
@@ -100,7 +111,7 @@ public class BookEntity extends BaseEntity implements Serializable {
     }
 
     public Integer getTotRatings() {
-        return TotRatings;
+        return totRatings;
     }
 
     public Integer getSumRating() {
