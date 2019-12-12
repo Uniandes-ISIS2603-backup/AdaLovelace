@@ -106,7 +106,7 @@ public class AuthorBooksLogicTest {
 
         author = factory.manufacturePojo(AuthorEntity.class);
         author.setId(1L);
-        author.setBooks(new ArrayList<>());
+        //author.setBooks(new ArrayList<>());
         em.persist(author);
 
         for (int i = 0; i < 3; i++) {
@@ -115,7 +115,7 @@ public class AuthorBooksLogicTest {
             //entity.getAuthors().add(author);
             em.persist(entity);
             data.add(entity);
-            author.getBooks().add(entity);
+            //author.getBooks().add(entity);
         }
     }
 

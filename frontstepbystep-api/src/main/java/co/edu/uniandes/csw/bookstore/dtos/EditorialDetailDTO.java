@@ -89,7 +89,7 @@ public class EditorialDetailDTO extends EditorialDTO implements Serializable {
     /*
     * Esta lista de tipo BookDTO contiene los books que estan asociados a una editorial
      */
-    private List<BookDTO> books;
+
 
     /**
      * Constructor por defecto
@@ -105,12 +105,7 @@ public class EditorialDetailDTO extends EditorialDTO implements Serializable {
     public EditorialDetailDTO(EditorialEntity editorialEntity) {
         super(editorialEntity);
         if (editorialEntity != null) {
-            if (editorialEntity.getBooks() != null) {
-                books = new ArrayList<>();
-                for (BookEntity entityBook : editorialEntity.getBooks()) {
-                    books.add(new BookDTO(entityBook));
-                }
-            }
+
         }
     }
 
@@ -122,13 +117,7 @@ public class EditorialDetailDTO extends EditorialDTO implements Serializable {
     @Override
     public EditorialEntity toEntity() {
         EditorialEntity editorialEntity = super.toEntity();
-        if (books != null) {
-            List<BookEntity> booksEntity = new ArrayList<>();
-            for (BookDTO dtoBook : books) {
-                booksEntity.add(dtoBook.toEntity());
-            }
-            editorialEntity.setBooks(booksEntity);
-        }
+
         return editorialEntity;
     }
 
@@ -137,18 +126,7 @@ public class EditorialDetailDTO extends EditorialDTO implements Serializable {
      *
      * @return the books
      */
-    public List<BookDTO> getBooks() {
-        return books;
-    }
 
-    /**
-     * Modifica la lista de libros de la editorial.
-     *
-     * @param books the books to set
-     */
-    public void setBooks(List<BookDTO> books) {
-        this.books = books;
-    }
 
     @Override
     public String toString() {

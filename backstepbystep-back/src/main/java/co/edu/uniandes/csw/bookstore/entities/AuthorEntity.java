@@ -49,9 +49,6 @@ public class AuthorEntity extends BaseEntity implements Serializable {
     @PodamStrategyValue(DateStrategy.class)
     private Date birthDate;
 
-    @PodamExclude
-    @ManyToMany(mappedBy = "authors")
-    private List<BookEntity> books = new ArrayList<>();
 
     @PodamExclude
     @OneToMany(mappedBy = "author",fetch=FetchType.LAZY)
@@ -97,23 +94,7 @@ public class AuthorEntity extends BaseEntity implements Serializable {
         this.birthDate = birthDate;
     }
 
-    /**
-     * Obtiene la colección de books.
-     *
-     * @return colección books.
-     */
-    public List<BookEntity> getBooks() {
-        return books;
-    }
-
-    /**
-     * Establece el valor de la colección de books.
-     *
-     * @param books nuevo valor de la colección.
-     */
-    public void setBooks(List<BookEntity> books) {
-        this.books = books;
-    }
+  
 
     /**
      * Obtiene la colección de premios.

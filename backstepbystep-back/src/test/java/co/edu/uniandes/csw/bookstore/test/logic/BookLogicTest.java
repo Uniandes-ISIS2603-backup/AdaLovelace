@@ -132,7 +132,7 @@ public class BookLogicTest {
         }
         AuthorEntity author = factory.manufacturePojo(AuthorEntity.class);
         em.persist(author);
-        author.getBooks().add(data.get(1));
+        //author.getBooks().add(data.get(1));
         //data.get(1).getAuthors().add(author);
     }
 

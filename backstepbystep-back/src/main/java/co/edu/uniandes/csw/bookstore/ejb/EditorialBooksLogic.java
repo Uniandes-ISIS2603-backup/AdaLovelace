@@ -75,8 +75,9 @@ public class EditorialBooksLogic {
      * @return La lista de libros de la editorial
      */
     public List<BookEntity> getBooks(Long editorialsId) {
-        LOGGER.log(Level.INFO, "Inicia proceso de consultar los libros asociados a la editorial con id = {0}", editorialsId);
-        return editorialPersistence.find(editorialsId).getBooks();
+        /*LOGGER.log(Level.INFO, "Inicia proceso de consultar los libros asociados a la editorial con id = {0}", editorialsId);
+        return editorialPersistence.find(editorialsId).getBooks();*/
+        return null;
     }
 
     /**
@@ -89,7 +90,7 @@ public class EditorialBooksLogic {
      * editorial
      */
     public BookEntity getBook(Long editorialsId, Long booksId) throws BusinessLogicException {
-        LOGGER.log(Level.INFO, "Inicia proceso de consultar el libro con id = {0} de la editorial con id = " + editorialsId, booksId);
+        /*LOGGER.log(Level.INFO, "Inicia proceso de consultar el libro con id = {0} de la editorial con id = " + editorialsId, booksId);
         List<BookEntity> books = editorialPersistence.find(editorialsId).getBooks();
         BookEntity bookEntity = bookPersistence.find(booksId);
         int index = books.indexOf(bookEntity);
@@ -97,7 +98,8 @@ public class EditorialBooksLogic {
         if (index >= 0) {
             return books.get(index);
         }
-        throw new BusinessLogicException("El libro no está asociado a la editorial");
+        throw new BusinessLogicException("El libro no está asociado a la editorial");*/
+        return null;
     }
 
     /**

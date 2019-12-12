@@ -110,7 +110,7 @@ public class AuthorLogic {
      * @throws BusinessLogicException si el autor tiene libros asociados.
      */
     public void deleteAuthor(Long authorsId) throws BusinessLogicException {
-        LOGGER.log(Level.INFO, "Inicia proceso de borrar el autor con id = {0}", authorsId);
+        /*LOGGER.log(Level.INFO, "Inicia proceso de borrar el autor con id = {0}", authorsId);
         List<BookEntity> books = getAuthor(authorsId).getBooks();
         if (books != null && !books.isEmpty()) {
             throw new BusinessLogicException("No se puede borrar el autor con id = " + authorsId + " porque tiene books asociados");
@@ -120,6 +120,6 @@ public class AuthorLogic {
             throw new BusinessLogicException("No se puede borrar el autor con id = " + authorsId + " porque tiene premios asociados");
         }
         persistence.delete(authorsId);
-        LOGGER.log(Level.INFO, "Termina proceso de borrar el autor con id = {0}", authorsId);
+        LOGGER.log(Level.INFO, "Termina proceso de borrar el autor con id = {0}", authorsId);*/
     }
 }
