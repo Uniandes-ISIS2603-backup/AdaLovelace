@@ -31,8 +31,8 @@ public class SaleEntity extends BaseEntity implements Serializable{
     @OneToMany
     private List<BookEntity> books = new ArrayList<>();
     
-   @ManyToOne
-   private ClientEntity client;
+    @ManyToOne
+    private ClientEntity client;
    
 
     /**
