@@ -39,10 +39,10 @@ public class SaleLogic {
             throw new BusinessLogicException("El client es vacìo");
         }
         if (saleEntity.getValue() < 0) {
-            throw new BusinessLogicException("El valor es inválido");
+            throw new BusinessLogicException("El valor total es inválido");
         }
         if(saleEntity.getDate() == null){
-            throw new BusinessLogicException("Fecha es vacía");
+            throw new BusinessLogicException("Fecha de venta es vacía");
         }
         salePersistence.create(saleEntity);
         LOGGER.log(Level.INFO, "Termina proceso de creación de venta");
@@ -60,7 +60,7 @@ public class SaleLogic {
     public SaleEntity getSale(Long saleId) {
         LOGGER.log(Level.INFO, "Inicia proceso de consultar ventas con id = {0}", saleId);
         SaleEntity saleEntity = salePersistence.find(saleId);
-        if (saleId == null) {
+        if (saleEntity == null) {
             LOGGER.log(Level.SEVERE, "La venta con el id = {0} no existe", saleId);
         }
         LOGGER.log(Level.INFO, "Termina proceso de consultar venta con id = {0}", saleId);
@@ -73,16 +73,6 @@ public class SaleLogic {
         SaleEntity newEntity = salePersistence.update(saleEntity);
         LOGGER.log(Level.INFO, "Termina proceso de actualizar venta con id = {0}", saleEntity.getId());
         return newEntity;
-    }
-
-    public void deleteSale(Long saleId) throws BusinessLogicException {
-        LOGGER.log(Level.INFO, "Inicia proceso de borrar venta con id = {0}", saleId);
-        List<BookEntity> books = getSale(saleId).getBooks();
-        if (books != null && !books.isEmpty()) {
-            throw new BusinessLogicException("No se puede borrar venta con id = " + saleId + " porque tiene libros asociados");
-        }
-        salePersistence.delete(saleId);
-        LOGGER.log(Level.INFO, "Termina proceso de borrar venta con id = {0}", saleId);
     }
 
    

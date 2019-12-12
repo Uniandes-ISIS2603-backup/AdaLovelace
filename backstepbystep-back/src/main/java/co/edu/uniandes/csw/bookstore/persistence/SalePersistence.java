@@ -18,7 +18,7 @@ import javax.persistence.TypedQuery;
 
 /**
  *
- * @author Estudiante
+ * @author Ada Lovelace
  */
 @Stateless
 public class SalePersistence {
@@ -52,13 +52,6 @@ public class SalePersistence {
         LOGGER.log(Level.INFO, "Actualizando venta con id={0}", saleEntity.getId());
         return em.merge(saleEntity);
     }
-
     
-    public void delete(Long saleId) {
-        LOGGER.log(Level.INFO, "Borrando la venta con id={0}", saleId);
-        SaleEntity saleEntity = em.find(SaleEntity.class, saleId);
-        em.remove(saleEntity);
-    }
-
  
 }
