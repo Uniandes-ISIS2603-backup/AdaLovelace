@@ -143,10 +143,9 @@ public class ReviewPersistenceTest {
         ReviewEntity entity = em.find(ReviewEntity.class, result.getId());
 
         Assert.assertEquals(newEntity.getName(), entity.getName());
-<<<<<<< HEAD
+
         Assert.assertEquals(newEntity.getScore(), entity.getScore());
-=======
->>>>>>> edb4d8b28cdc18f8d1ce94ce04668aa3f60d3a37
+
         Assert.assertEquals(newEntity.getDescription(), entity.getDescription());
     }
 
@@ -159,10 +158,9 @@ public class ReviewPersistenceTest {
         ReviewEntity newEntity = reviewPersistence.find(dataBook.get(0).getId(), entity.getId());
         Assert.assertNotNull(newEntity);
         Assert.assertEquals(entity.getName(), newEntity.getName());
-<<<<<<< HEAD
+
         Assert.assertEquals(entity.getScore(), newEntity.getScore());
-=======
->>>>>>> edb4d8b28cdc18f8d1ce94ce04668aa3f60d3a37
+
         Assert.assertEquals(entity.getDescription(), newEntity.getDescription());
     }
 
@@ -193,10 +191,9 @@ public class ReviewPersistenceTest {
         ReviewEntity resp = em.find(ReviewEntity.class, entity.getId());
 
         Assert.assertEquals(newEntity.getName(), resp.getName());
-<<<<<<< HEAD
+
         Assert.assertEquals(newEntity.getScore(), resp.getScore());
-=======
->>>>>>> edb4d8b28cdc18f8d1ce94ce04668aa3f60d3a37
+
         Assert.assertEquals(newEntity.getDescription(), resp.getDescription());
     }
 }

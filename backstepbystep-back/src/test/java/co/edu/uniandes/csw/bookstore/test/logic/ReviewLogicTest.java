@@ -155,10 +155,8 @@ public class ReviewLogicTest {
         ReviewEntity entity = em.find(ReviewEntity.class, result.getId());
         Assert.assertEquals(newEntity.getId(), entity.getId());
         Assert.assertEquals(newEntity.getName(), entity.getName());
-<<<<<<< HEAD
         Assert.assertEquals(newEntity.getScore(), entity.getScore());
-=======
->>>>>>> edb4d8b28cdc18f8d1ce94ce04668aa3f60d3a37
+
         Assert.assertEquals(newEntity.getDescription(), entity.getDescription());
     }
 
@@ -192,10 +190,8 @@ public class ReviewLogicTest {
         Assert.assertNotNull(resultEntity);
         Assert.assertEquals(entity.getId(), resultEntity.getId());
         Assert.assertEquals(entity.getName(), resultEntity.getName());
-<<<<<<< HEAD
         Assert.assertEquals(entity.getScore(), resultEntity.getScore());
-=======
->>>>>>> edb4d8b28cdc18f8d1ce94ce04668aa3f60d3a37
+
         Assert.assertEquals(entity.getDescription(), resultEntity.getDescription());
     }
 
@@ -215,10 +211,7 @@ public class ReviewLogicTest {
 
         Assert.assertEquals(pojoEntity.getId(), resp.getId());
         Assert.assertEquals(pojoEntity.getName(), resp.getName());
-<<<<<<< HEAD
         Assert.assertEquals(pojoEntity.getScore(), resp.getScore());
-=======
->>>>>>> edb4d8b28cdc18f8d1ce94ce04668aa3f60d3a37
         Assert.assertEquals(pojoEntity.getDescription(), resp.getDescription());
     }
 
