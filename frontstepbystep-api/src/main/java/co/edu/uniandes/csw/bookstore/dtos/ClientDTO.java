@@ -3,28 +3,67 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.bookstore.entities;
+package co.edu.uniandes.csw.bookstore.dtos;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import co.edu.uniandes.csw.bookstore.entities.ClientEntity;
+import java.io.Serializable;
 
 /**
  *
  * @author Daniel Betancurth Dorado
  */
-@Entity
-public class ClientEntity extends BaseEntity{
-    private String name;
+public class ClientDTO implements Serializable{
+   private Long id;
+   private String name;
     private String accountNumber;
     private String phoneNumber;
     private String mail;
     private String documentNumber;
     private String directionResidence;
     
-@OneToMany(mappedBy = "client")
-    private List<SaleEntity> compras = new ArrayList<SaleEntity>();
+    public ClientDTO()
+    {
+        
+    }
+    public ClientDTO(ClientEntity clientEntity){
+        if(clientEntity!=null)
+        {
+            this.id= clientEntity.getId();
+            this.name= clientEntity.getName();
+            this.accountNumber=clientEntity.getAccountNumber();
+            this.phoneNumber=clientEntity.getPhoneNumber();
+            this.mail= clientEntity.getMail();
+            this.documentNumber= clientEntity.getDocumentNumber();
+            this.directionResidence= clientEntity.getDirectionResidence();
+        }
+    }
+    public ClientEntity toEntity()
+    {
+        ClientEntity clientEntity = new ClientEntity();
+        clientEntity.setId(this.getId());
+        clientEntity.setName(this.getName());
+        clientEntity.setAccountNumber(this.getAccountNumber());
+        clientEntity.setPhoneNumber(this.getPhoneNumber());
+        clientEntity.setMail(this.getMail());
+        clientEntity.setDocumentNumber(this.getDocumentNumber());
+        clientEntity.setDirectionResidence(this.getDirectionResidence());
+        return clientEntity;
+    }
+
+    /**
+     * @return the id
+     */
+    public Long getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     /**
      * @return the name
      */
@@ -108,20 +147,4 @@ public class ClientEntity extends BaseEntity{
     public void setDirectionResidence(String directionResidence) {
         this.directionResidence = directionResidence;
     }
-
-    /**
-     * @return the clientes
-     */
-    public List<SaleEntity> getCompras() {
-        return compras;
-    }
-
-    /**
-     * @param clientes the clientes to set
-     */
-    public void setCompras(List<SaleEntity> compras) {
-        this.compras = compras;
-    }
-    
-    
 }

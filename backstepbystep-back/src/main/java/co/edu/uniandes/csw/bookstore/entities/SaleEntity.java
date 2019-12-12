@@ -5,6 +5,7 @@
  */
 package co.edu.uniandes.csw.bookstore.entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -19,7 +20,7 @@ import javax.persistence.TemporalType;
  * @author Ada Lovelace
  */
 @Entity
-public class SaleEntity extends BaseEntity {
+public class SaleEntity extends BaseEntity implements Serializable{
     
     
     private int valueTot;
@@ -30,8 +31,8 @@ public class SaleEntity extends BaseEntity {
     @OneToMany
     private List<BookEntity> books = new ArrayList<>();
     
-   @ManyToOne
-   private ClientEntity client;
+    @ManyToOne
+    private ClientEntity client;
    
 
     /**
