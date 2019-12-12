@@ -6,6 +6,7 @@
 package co.edu.uniandes.csw.bookstore.ejb;
 
 import co.edu.uniandes.csw.bookstore.entities.ClientEntity;
+import co.edu.uniandes.csw.bookstore.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.bookstore.persistence.AuthorPersistence;
 import co.edu.uniandes.csw.bookstore.persistence.ClientPersistence;
 import java.util.List;
@@ -51,9 +52,9 @@ public class ClientLogic {
         LOGGER.log(Level.INFO, "Termina proceso de actualizar el cliente con id = {0}", clientId);
         return newClientEntity;
     }
-   public void deleteClient(Long authorsId) throws BusinessLogicException {
-        LOGGER.log(Level.INFO, "Inicia proceso de borrar el autor con id = {0}", authorsId);
-        List<BookEntity> books = getAuthor(authorsId).getBooks();
+   public void deleteClient(Long clientId) throws BusinessLogicException {
+        LOGGER.log(Level.INFO, "Inicia proceso de borrar el cliente con id = {0}", clientId);
+ /**       List<BookEntity> books = getAuthor(authorsId).getBooks();
         if (books != null && !books.isEmpty()) {
             throw new BusinessLogicException("No se puede borrar el autor con id = " + authorsId + " porque tiene books asociados");
         }
@@ -61,8 +62,8 @@ public class ClientLogic {
         if (prizes != null && !prizes.isEmpty()) {
             throw new BusinessLogicException("No se puede borrar el autor con id = " + authorsId + " porque tiene premios asociados");
         }
-        persistence.delete(authorsId);
-        LOGGER.log(Level.INFO, "Termina proceso de borrar el autor con id = {0}", authorsId);
+    */    persistence.delete(clientId);
+        LOGGER.log(Level.INFO, "Termina proceso de borrar el cliente con id = {0}", clientId);
     }
  
 }
