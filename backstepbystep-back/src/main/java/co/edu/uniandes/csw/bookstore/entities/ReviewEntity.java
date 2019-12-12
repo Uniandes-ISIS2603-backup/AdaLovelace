@@ -38,7 +38,7 @@ import uk.co.jemos.podam.common.PodamExclude;
 public class ReviewEntity extends BaseEntity implements Serializable {
 
     private String name;
-    private String source;
+    private int score;
     private String description;
 
     @PodamExclude
@@ -68,8 +68,8 @@ public class ReviewEntity extends BaseEntity implements Serializable {
      *
      * @return La fuente
      */
-    public String getSource() {
-        return source;
+    public int getScore() {
+        return score;
     }
 
     /**
@@ -77,8 +77,8 @@ public class ReviewEntity extends BaseEntity implements Serializable {
      *
      * @param source La nueva fuente
      */
-    public void setSource(String source) {
-        this.source = source;
+    public void setSource(int score) {
+        this.score = score;
     }
 
     /**
