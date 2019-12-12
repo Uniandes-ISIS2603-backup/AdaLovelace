@@ -73,6 +73,7 @@ public class BookDTO implements Serializable {
 
     private Long id;
     private String name;
+    private Integer price;
     private String isbn;
     private String image;
     private String description;
@@ -115,6 +116,7 @@ public class BookDTO implements Serializable {
             this.publishingdate = bookEntity.getPublishDate();
             this.editorial = bookEntity.getEditorial();
             this.author = bookEntity.getAuthor();
+            this.price = bookEntity.getPrice();
             
             this.totRatings=bookEntity.getTotRatings();
             this.availability=bookEntity.getAvailability();
@@ -135,6 +137,7 @@ public class BookDTO implements Serializable {
      */
     public BookEntity toEntity() {
         BookEntity bookEntity = new BookEntity();
+        bookEntity.setPrice(this.price);
         bookEntity.setId(this.id);
         bookEntity.setName(this.name);
         bookEntity.setIsbn(this.isbn);
@@ -280,6 +283,14 @@ public class BookDTO implements Serializable {
      */
     public void setImage(String image) {
         this.image = image;
+    }
+    
+    public Integer getPrice() {
+        return this.price;
+    }
+    
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 
     /**
