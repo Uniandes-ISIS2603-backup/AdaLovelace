@@ -124,13 +124,13 @@ public class EditorialLogic {
      * @throws BusinessLogicException Si la editorial a eliminar tiene libros.
      */
     public void deleteEditorial(Long editorialsId) throws BusinessLogicException {
-        LOGGER.log(Level.INFO, "Inicia proceso de borrar la editorial con id = {0}", editorialsId);
+        /*LOGGER.log(Level.INFO, "Inicia proceso de borrar la editorial con id = {0}", editorialsId);
         // Note que, por medio de la inyección de dependencias se llama al método "delete(id)" que se encuentra en la persistencia.
         List<BookEntity> books = getEditorial(editorialsId).getBooks();
         if (books != null && !books.isEmpty()) {
             throw new BusinessLogicException("No se puede borrar la editorial con id = " + editorialsId + " porque tiene books asociados");
         }
         persistence.delete(editorialsId);
-        LOGGER.log(Level.INFO, "Termina proceso de borrar la editorial con id = {0}", editorialsId);
+        LOGGER.log(Level.INFO, "Termina proceso de borrar la editorial con id = {0}", editorialsId);*/
     }
 }

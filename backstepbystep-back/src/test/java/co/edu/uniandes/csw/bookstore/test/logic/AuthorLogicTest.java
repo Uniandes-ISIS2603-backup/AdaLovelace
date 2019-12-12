@@ -119,14 +119,14 @@ public class AuthorLogicTest {
         for (int i = 0; i < 3; i++) {
             AuthorEntity entity = factory.manufacturePojo(AuthorEntity.class);
             em.persist(entity);
-            entity.setBooks(new ArrayList<>());
+            //entity.setBooks(new ArrayList<>());
             data.add(entity);
         }
         AuthorEntity author = data.get(2);
         BookEntity entity = factory.manufacturePojo(BookEntity.class);
         //entity.getAuthors().add(author);
         em.persist(entity);
-        author.getBooks().add(entity);
+        //author.getBooks().add(entity);
 
         PrizeEntity prize = factory.manufacturePojo(PrizeEntity.class);
         prize.setAuthor(data.get(1));
