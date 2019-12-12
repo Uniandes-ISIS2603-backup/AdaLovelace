@@ -30,3 +30,23 @@ insert into ReviewEntity  (id, name,  description, source, book_id) values (100,
 insert into ReviewEntity  (id, name,  description, source, book_id) values (200, ' ','The trilogy is worth reading once. For readers who like fast paced action , this is not a series I would recommend. It progresses quite slowly and the descriptions are lengthy - not really my type. But if you have the patience, the plot is worth it.', ' ', 100);
 insert into ReviewEntity  (id, name,  description, source, book_id) values (300,' ','This isnt really like other books, even its imitators, though the best of them are similarly long, variable in pace and diverse in language and location. The early part of the story was meant to be a follow-up to The Hobbit, u ',' ', 200);
 insert into ReviewEntity  (id, name,  description, source, book_id) values (400,' ', 'The trilogy is worth reading once. For readers who like fast paced action , this is not a series I would recommend. It progresses quite slowly and the descriptions are lengthy - not really my type. But if you have the patience, the plot is worth it.',' ', 300);
+
+private String name;
+    private String isbn;
+    private String image;
+    @Temporal(TemporalType.DATE)
+    private Date publishDate;
+    private String description;
+
+    private Integer availability;
+    private Integer totRatings;
+    private Integer sumRating;
+    private Double avgRating;
+    private String comments;
+    private Double discount;
+    private String genre;
+
+insert into BookEntity ( name, isbn, image, publishDate, description, availability, totRatings, sumRating, avgRating, comments, discount, genre)
+values ('prueba1', '111', 'algo.png', '2020-10-10', 'alguna descripcion', 10, 0, 0, 0, 'algun comentario', 20, 'algun genero')
+
+SELECT * FROM BookEntity

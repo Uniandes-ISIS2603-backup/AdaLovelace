@@ -47,8 +47,7 @@ public class BookEntity extends BaseEntity implements Serializable {
     private String name;
     private String isbn;
     private String image;
-    @Temporal(TemporalType.DATE)
-    private Date publishDate;
+    private String publishDate;
     private String description;
 
     private Integer availability;
@@ -192,7 +191,7 @@ public class BookEntity extends BaseEntity implements Serializable {
      *
      * @return the publishDate
      */
-    public Date getPublishDate() {
+    public String getPublishDate() {
         return publishDate;
     }
 
@@ -201,7 +200,7 @@ public class BookEntity extends BaseEntity implements Serializable {
      *
      * @param publishDate the publishDate to set
      */
-    public void setPublishDate(Date publishDate) {
+    public void setPublishDate(String publishDate) {
         this.publishDate = publishDate;
     }
 
