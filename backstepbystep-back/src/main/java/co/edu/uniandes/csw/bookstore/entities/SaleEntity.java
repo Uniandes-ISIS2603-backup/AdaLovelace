@@ -30,8 +30,8 @@ public class SaleEntity extends BaseEntity {
     @OneToMany
     private List<BookEntity> books = new ArrayList<>();
     
-   @ManyToOne
-   private ClientEntity client;
+    @ManyToOne
+    private ClientEntity client;
    
 
     /**

@@ -20,7 +20,7 @@ public class SaleDTO implements Serializable {
     
     private Long id;
     private Integer valueTot;
-    @XmlJavaTypeAdapter(DateAdapter.class)
+    @XmlJavaTypeAdapter (DateAdapter.class)
     private Date saleDate;
     
     //private ClientDTO client;

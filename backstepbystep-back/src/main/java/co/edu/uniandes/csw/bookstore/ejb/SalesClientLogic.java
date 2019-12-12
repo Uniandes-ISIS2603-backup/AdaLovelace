@@ -43,7 +43,7 @@ public class SalesClientLogic {
         SaleEntity saleEntity = salePersistence.find(saleId);
         ClientEntity clientEntity = clientPersistence.find(saleEntity.getClient().getId());
         saleEntity.setClient(null);
-        clientEntity.getSales().remove(saleEntity);
+        clientEntity.getCompras().remove(saleEntity);
         LOGGER.log(Level.INFO, "Termina proceso de borrar cliente de venta con id = {0}", saleEntity.getId());
     }
 }
