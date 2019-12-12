@@ -24,7 +24,7 @@ public class ClientEntity extends BaseEntity{
     private String directionResidence;
     
 @OneToMany(mappedBy = "client")
-    private List<SaleEntity> clientes = new ArrayList<SaleEntity>();
+    private List<SaleEntity> compras = new ArrayList<SaleEntity>();
     /**
      * @return the name
      */
@@ -112,15 +112,15 @@ public class ClientEntity extends BaseEntity{
     /**
      * @return the clientes
      */
-    public List<SaleEntity> getClientes() {
-        return clientes;
+    public List<SaleEntity> getCompras() {
+        return compras;
     }
 
     /**
      * @param clientes the clientes to set
      */
-    public void setClientes(List<SaleEntity> clientes) {
-        this.clientes = clientes;
+    public void setCompras(List<SaleEntity> compras) {
+        this.compras = compras;
     }
     
     
