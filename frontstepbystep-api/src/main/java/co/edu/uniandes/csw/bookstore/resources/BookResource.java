@@ -126,6 +126,19 @@ public class BookResource {
         LOGGER.log(Level.INFO, "BookResource getBook: output: {0}", bookDetailDTO);
         return bookDetailDTO;
     }
+    
+    @GET
+     @Path("{bookGenre: [a-zA-Z]+}")
+    public List<BookDetailDTO> getBookByGenre(@PathParam("bookGenre") String genre)
+    {
+        List<BookEntity> books =bookLogic.getByGenre(genre);
+        if (books == null) {
+            throw new WebApplicationException("El recurso /serviciosOfrecidos/" + genre + " no existe.", 404);
+        }
+        
+        return listEntity2DetailDTO(books);
+    }
+    
 
     /**
      * Actualiza el libro con el id recibido en la URL con la información que se

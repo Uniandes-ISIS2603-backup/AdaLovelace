@@ -135,6 +135,11 @@ public class BookLogic {
         persistence.delete(booksId);*/
         LOGGER.log(Level.INFO, "Termina proceso de borrar el libro con id = {0}", booksId);
     }
+    
+    public  List<BookEntity> getByGenre(String genre)
+    {
+        return persistence.findByGenre(genre);
+    }
 
     /**
      * Verifica que el ISBN no sea invalido.
