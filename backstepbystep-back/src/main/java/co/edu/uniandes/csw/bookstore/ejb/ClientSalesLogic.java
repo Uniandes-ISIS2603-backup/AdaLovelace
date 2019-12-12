@@ -53,4 +53,18 @@ public class ClientSalesLogic {
         }
         throw new BusinessLogicException("El libro no está asociado a la editorial");
     }
+       public List<SaleEntity> replaceSales(Long clientId, List<SaleEntity> sales) {
+        LOGGER.log(Level.INFO, "Inicia proceso de actualizar el cliente con id = {0}", clientId);
+        ClientEntity clientEntity = clientPersistence.find(clientId);
+        List<SaleEntity> saleList = salePersistence.findAll();
+        for (SaleEntity sale : saleList) {
+            if (sales.contains(sale)) {
+                sale.setClient(clientEntity);
+            } else if (sale.getClient() != null && sale.getClient().equals(clientEntity)) {
+                sale.setClient(null);
+            }
+        }
+        LOGGER.log(Level.INFO, "Termina proceso de actualizar el cliente con id = {0}", clientId);
+        return sales;
+    }
 }
