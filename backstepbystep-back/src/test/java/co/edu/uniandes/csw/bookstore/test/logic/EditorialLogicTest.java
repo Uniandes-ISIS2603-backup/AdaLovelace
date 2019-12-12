@@ -126,7 +126,7 @@ public class EditorialLogicTest {
             em.persist(entity);
             data.add(entity);
             if (i == 0) {
-                booksData.get(i).setEditorial(entity);
+                //booksData.get(i).setEditorial(entity);
             }
         }
     }

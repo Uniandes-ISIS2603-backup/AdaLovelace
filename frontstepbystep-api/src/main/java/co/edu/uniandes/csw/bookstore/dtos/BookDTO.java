@@ -91,7 +91,8 @@ public class BookDTO implements Serializable {
     * Relación a una editorial  
     * dado que esta tiene cardinalidad 1.
      */
-    private EditorialDTO editorial;
+    private String editorial;
+    private String author;
 
     /**
      * Constructor por defecto
@@ -112,11 +113,9 @@ public class BookDTO implements Serializable {
             this.image = bookEntity.getImage();
             this.description = bookEntity.getDescription();
             this.publishingdate = bookEntity.getPublishDate();
-            if (bookEntity.getEditorial() != null) {
-                this.editorial = new EditorialDTO(bookEntity.getEditorial());
-            } else {
-                this.editorial = null;
-            }
+            this.editorial = bookEntity.getEditorial();
+            this.author = bookEntity.getAuthor();
+            
             this.totRatings=bookEntity.getTotRatings();
             this.availability=bookEntity.getAvailability();
             this.avgRating=bookEntity.getAvgRating();
@@ -142,9 +141,7 @@ public class BookDTO implements Serializable {
         bookEntity.setImage(this.image);
         bookEntity.setDescription(this.description);
         bookEntity.setPublishDate(this.publishingdate);
-        if (this.editorial != null) {
-            bookEntity.setEditorial(this.editorial.toEntity());
-        }
+        bookEntity.setEditorial(this.editorial);
         bookEntity.setTotRatings(this.totRatings);
         bookEntity.setAvailability(this.availability);
         bookEntity.setAvgRating(this.avgRating);
@@ -326,7 +323,7 @@ public class BookDTO implements Serializable {
      *
      * @return the editorial
      */
-    public EditorialDTO getEditorial() {
+    public String getEditorial() {
         return editorial;
     }
 
@@ -335,9 +332,18 @@ public class BookDTO implements Serializable {
      *
      * @param editorial the editorial to set
      */
-    public void setEditorial(EditorialDTO editorial) {
+    public void setEditorial(String editorial) {
         this.editorial = editorial;
     }
+    
+    public String getAuthor() {
+        return author;
+    }
+    
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+    
 
     @Override
     public String toString() {

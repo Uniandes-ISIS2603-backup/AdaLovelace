@@ -50,3 +50,5 @@ insert into BookEntity ( name, isbn, image, publishDate, description, availabili
 values ('prueba1', '111', 'algo.png', '2020-10-10', 'alguna descripcion', 10, 0, 0, 0, 'algun comentario', 20, 'algun genero')
 
 SELECT * FROM BookEntity
+
+delete from bookentity

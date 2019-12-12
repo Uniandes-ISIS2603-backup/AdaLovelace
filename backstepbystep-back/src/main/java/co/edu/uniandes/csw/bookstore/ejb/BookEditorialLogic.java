@@ -60,7 +60,7 @@ public class BookEditorialLogic {
         LOGGER.log(Level.INFO, "Inicia proceso de actualizar libro con id = {0}", booksId);
         EditorialEntity editorialEntity = editorialPersistence.find(editorialsId);
         BookEntity bookEntity = bookPersistence.find(booksId);
-        bookEntity.setEditorial(editorialEntity);
+        //bookEntity.setEditorial(editorialEntity);
         LOGGER.log(Level.INFO, "Termina proceso de actualizar libro con id = {0}", bookEntity.getId());
         return bookEntity;
     }
@@ -74,9 +74,9 @@ public class BookEditorialLogic {
     public void removeEditorial(Long booksId) {
         LOGGER.log(Level.INFO, "Inicia proceso de borrar la Editorial del libro con id = {0}", booksId);
         BookEntity bookEntity = bookPersistence.find(booksId);
-        EditorialEntity editorialEntity = editorialPersistence.find(bookEntity.getEditorial().getId());
+        //EditorialEntity editorialEntity = editorialPersistence.find(bookEntity.getEditorial().getId());
         bookEntity.setEditorial(null);
-        editorialEntity.getBooks().remove(bookEntity);
+        //editorialEntity.getBooks().remove(bookEntity);
         LOGGER.log(Level.INFO, "Termina proceso de borrar la Editorial del libro con id = {0}", bookEntity.getId());
     }
 }

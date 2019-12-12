@@ -60,9 +60,9 @@ public class BookLogic {
      */
     public BookEntity createBook(BookEntity bookEntity) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "Inicia proceso de creación del libro");
-        if (bookEntity.getEditorial() == null || editorialPersistence.find(bookEntity.getEditorial().getId()) == null) {
+        /*if (bookEntity.getEditorial() == null || editorialPersistence.find(bookEntity.getEditorial().getId()) == null) {
             throw new BusinessLogicException("La editorial es inválida");
-        }
+        }*/
         if (!validateISBN(bookEntity.getIsbn())) {
             throw new BusinessLogicException("El ISBN es inválido");
         }
@@ -128,11 +128,11 @@ public class BookLogic {
      */
     public void deleteBook(Long booksId) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "Inicia proceso de borrar el libro con id = {0}", booksId);
-        List<AuthorEntity> authors = getBook(booksId).getAuthors();
+        /*List<AuthorEntity> authors = getBook(booksId).getAuthors();
         if (authors != null && !authors.isEmpty()) {
             throw new BusinessLogicException("No se puede borrar el libro con id = " + booksId + " porque tiene autores asociados");
         }
-        persistence.delete(booksId);
+        persistence.delete(booksId);*/
         LOGGER.log(Level.INFO, "Termina proceso de borrar el libro con id = {0}", booksId);
     }
 

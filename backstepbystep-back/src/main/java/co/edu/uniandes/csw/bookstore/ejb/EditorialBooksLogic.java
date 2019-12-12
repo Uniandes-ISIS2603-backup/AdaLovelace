@@ -63,7 +63,7 @@ public class EditorialBooksLogic {
         LOGGER.log(Level.INFO, "Inicia proceso de agregarle un libro a la editorial con id = {0}", editorialsId);
         EditorialEntity editorialEntity = editorialPersistence.find(editorialsId);
         BookEntity bookEntity = bookPersistence.find(booksId);
-        bookEntity.setEditorial(editorialEntity);
+        //bookEntity.setEditorial(editorialEntity);
         LOGGER.log(Level.INFO, "Termina proceso de agregarle un libro a la editorial con id = {0}", editorialsId);
         return bookEntity;
     }
@@ -113,7 +113,7 @@ public class EditorialBooksLogic {
         List<BookEntity> bookList = bookPersistence.findAll();
         for (BookEntity book : bookList) {
             if (books.contains(book)) {
-                book.setEditorial(editorialEntity);
+                //book.setEditorial(editorialEntity);
             } else if (book.getEditorial() != null && book.getEditorial().equals(editorialEntity)) {
                 book.setEditorial(null);
             }

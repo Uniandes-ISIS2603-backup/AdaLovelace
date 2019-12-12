@@ -125,9 +125,6 @@ public class BookDetailDTO extends BookDTO implements Serializable {
     // relación  cero o muchos reviews 
     private List<ReviewDTO> reviews;
 
-    // relación  cero o muchos author
-    private List<AuthorDTO> authors;
-
     public BookDetailDTO() {
         super();
     }
@@ -143,12 +140,6 @@ public class BookDetailDTO extends BookDTO implements Serializable {
             reviews = new ArrayList<>();
             for (ReviewEntity entityReview : bookEntity.getReviews()) {
                 reviews.add(new ReviewDTO(entityReview));
-            }
-        }
-        if (bookEntity.getAuthors() != null) {
-            authors = new ArrayList<>();
-            for (AuthorEntity entityAuthor : bookEntity.getAuthors()) {
-                authors.add(new AuthorDTO(entityAuthor));
             }
         }
     }
@@ -167,13 +158,6 @@ public class BookDetailDTO extends BookDTO implements Serializable {
                 reviewsEntity.add(dtoReview.toEntity());
             }
             bookEntity.setReviews(reviewsEntity);
-        }
-        if (authors != null) {
-            List<AuthorEntity> authorsEntity = new ArrayList<>();
-            for (AuthorDTO dtoAuthor : authors) {
-                authorsEntity.add(dtoAuthor.toEntity());
-            }
-            bookEntity.setAuthors(authorsEntity);
         }
         return bookEntity;
     }
@@ -195,22 +179,5 @@ public class BookDetailDTO extends BookDTO implements Serializable {
     public void setReviews(List<ReviewDTO> reviews) {
         this.reviews = reviews;
     }
-
-    /**
-     * Devuelve los autores del libro
-     *
-     * @return DTO de Autores
-     */
-    public List<AuthorDTO> getAuthors() {
-        return authors;
-    }
-
-    /**
-     * Modifica los autores del libro
-     *
-     * @param authors Lista de autores
-     */
-    public void setAuthors(List<AuthorDTO> authors) {
-        this.authors = authors;
-    }
+  
 }
