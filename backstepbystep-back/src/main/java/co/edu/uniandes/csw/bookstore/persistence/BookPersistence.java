@@ -69,7 +69,7 @@ public class BookPersistence {
      */
     public List<BookEntity> findAll() {
         LOGGER.log(Level.INFO, "Consultando todos los libros");
-        Query q = em.createQuery("select u from BookEntity u");
+        Query q = em.createQuery("SELECT u FROM BookEntity u WHERE u.id > 0 and u.id < 50");
         return q.getResultList();
     }
 
