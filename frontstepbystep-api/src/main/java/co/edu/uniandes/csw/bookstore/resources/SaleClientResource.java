@@ -5,16 +5,9 @@
  */
 package co.edu.uniandes.csw.bookstore.resources;
 
-<<<<<<< HEAD
 
 import co.edu.uniandes.csw.bookstore.dtos.ClientDTO;
-
 import co.edu.uniandes.csw.bookstore.dtos.SaleDetailDTO;
-
-=======
-import co.edu.uniandes.csw.bookstore.dtos.ClientDTO;
-import co.edu.uniandes.csw.bookstore.dtos.SaleDetailDTO;
->>>>>>> 0b4b1c85626fcd9b9d624ef7354a55e20a26043f
 import co.edu.uniandes.csw.bookstore.ejb.ClientLogic;
 import co.edu.uniandes.csw.bookstore.ejb.SaleLogic;
 import co.edu.uniandes.csw.bookstore.ejb.SalesClientLogic;
