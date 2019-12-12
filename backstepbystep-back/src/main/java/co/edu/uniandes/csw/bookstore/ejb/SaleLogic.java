@@ -59,7 +59,7 @@ public class SaleLogic {
 
     public SaleEntity getSale(Long saleId) {
         LOGGER.log(Level.INFO, "Inicia proceso de consultar ventas con id = {0}", saleId);
-        List<SaleEntity> saleEntity = salePersistence.find(saleId);
+        SaleEntity saleEntity = salePersistence.find(saleId);
         if (saleId == null) {
             LOGGER.log(Level.SEVERE, "La venta con el id = {0} no existe", saleId);
         }
