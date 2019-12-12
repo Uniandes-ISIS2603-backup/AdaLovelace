@@ -30,8 +30,8 @@ public class SaleEntity extends BaseEntity {
     @OneToMany
     private List<BookEntity> books = new ArrayList<>();
     
-   //@ManyToOne
-   //private ClientEntity client;
+   @ManyToOne
+   private ClientEntity client;
    
 
     /**
@@ -74,5 +74,14 @@ public class SaleEntity extends BaseEntity {
      */
     public void setBooks(List<BookEntity> books) {
         this.books = books;
+    }
+    
+    public ClientEntity getClient(){
+        return client;
+        
+    }
+    
+    public void setClient(ClientEntity client){
+        this.client = client;
     }
 }

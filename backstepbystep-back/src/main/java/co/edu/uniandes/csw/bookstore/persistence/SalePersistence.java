@@ -64,24 +64,5 @@ public class SalePersistence {
         em.remove(saleEntity);
     }
 
-   
-    public BookEntity findByISBN(String isbn) {
-        LOGGER.log(Level.INFO, "Consultando libros por isbn ", isbn);
-        // Se crea un query para buscar libros con el isbn que recibe el método como argumento. ":isbn" es un placeholder que debe ser remplazado
-        TypedQuery query = em.createQuery("Select e From BookEntity e where e.isbn = :isbn", BookEntity.class);
-        // Se remplaza el placeholder ":isbn" con el valor del argumento 
-        query = query.setParameter("isbn", isbn);
-        // Se invoca el query se obtiene la lista resultado
-        List<BookEntity> sameISBN = query.getResultList();
-        BookEntity result;
-        if (sameISBN == null) {
-            result = null;
-        } else if (sameISBN.isEmpty()) {
-            result = null;
-        } else {
-            result = sameISBN.get(0);
-        }
-        LOGGER.log(Level.INFO, "Saliendo de consultar libros por isbn ", isbn);
-        return result;
-    }
+ 
 }
