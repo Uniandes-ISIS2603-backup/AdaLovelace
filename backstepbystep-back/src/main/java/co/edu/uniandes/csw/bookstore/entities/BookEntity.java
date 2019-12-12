@@ -51,6 +51,15 @@ public class BookEntity extends BaseEntity implements Serializable {
     private Date publishDate;
     private String description;
 
+    private Integer availability;
+    private Integer totRatings;
+    private Integer sumRating;
+    private Double avgRating;
+    private String comments;
+    private Double discount;
+    private String genre;
+
+    
     @PodamExclude
     @ManyToOne
     private EditorialEntity editorial;
@@ -62,6 +71,67 @@ public class BookEntity extends BaseEntity implements Serializable {
     @PodamExclude
     @ManyToMany
     private List<AuthorEntity> authors = new ArrayList<AuthorEntity>();
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+    
+    
+
+    public void setAvailability(Integer availability) {
+        this.availability = availability;
+    }
+
+    public void setTotRatings(Integer totRatings) {
+        this.totRatings = totRatings;
+    }
+
+    public void setSumRating(Integer sumRating) {
+        this.sumRating = sumRating;
+    }
+
+    public void setAvgRating(Double avgRating) {
+        this.avgRating = avgRating;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+
+    public void setDiscount(Double discount) {
+        this.discount = discount;
+    }
+    
+     public Integer getAvailability() {
+        return availability;
+    }
+
+    public Integer getTotRatings() {
+        return totRatings;
+    }
+
+    public Integer getSumRating() {
+        return sumRating;
+    }
+
+    public Double getAvgRating() {
+        return avgRating;
+    }
+
+    public String getComments() {
+        return comments;
+    }
+
+    public Double getDiscount() {
+        return discount;
+    }
+    
+    
+    
 
     /**
      * Devuelve el nombre del libro.
