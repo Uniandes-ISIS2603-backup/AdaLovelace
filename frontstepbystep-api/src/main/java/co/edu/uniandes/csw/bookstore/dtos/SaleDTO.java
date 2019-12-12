@@ -31,8 +31,8 @@ public class SaleDTO implements Serializable {
     public SaleDTO(SaleEntity saleEntity) {
        if (saleEntity != null) {
             this.id = saleEntity.getId();
-            this.valueTot = saleEntity.getValue();
-            this.saleDate = saleEntity.getDate();
+            this.valueTot = saleEntity.getValueTot();
+            this.saleDate = saleEntity.getSaleDate();
             if (saleEntity.getClient()!= null) {
                 this.client = new ClientDTO(saleEntity.getClient());
             } else {
@@ -47,8 +47,8 @@ public class SaleDTO implements Serializable {
     public SaleEntity toEntity() {
         SaleEntity saleEntity = new SaleEntity();
         saleEntity.setId(this.id);
-        saleEntity.setValue(this.valueTot);
-        saleEntity.setDate(saleDate);
+        saleEntity.setValueTot(this.getValueTot());
+        saleEntity.setSaleDate(getSaleDate());
         
         if (this.getClient() != null) {
             saleEntity.setClient(this.getClient().toEntity());
@@ -71,6 +71,34 @@ public class SaleDTO implements Serializable {
     }
 
     /**
+     * @return the valueTot
+     */
+    public Integer getValueTot() {
+        return valueTot;
+    }
+
+    /**
+     * @param valueTot the valueTot to set
+     */
+    public void setValueTot(Integer valueTot) {
+        this.valueTot = valueTot;
+    }
+
+    /**
+     * @return the saleDate
+     */
+    public String getSaleDate() {
+        return saleDate;
+    }
+
+    /**
+     * @param saleDate the saleDate to set
+     */
+    public void setSaleDate(String saleDate) {
+        this.saleDate = saleDate;
+    }
+
+    /**
      * @return the client
      */
     public ClientDTO getClient() {
@@ -84,31 +112,5 @@ public class SaleDTO implements Serializable {
         this.client = client;
     }
 
-    /**
-     * @return the vale
-     */
-    public Integer getVale() {
-        return valueTot;
-    }
-
-    /**
-     * @param vale the vale to set
-     */
-    public void setVale(int vale) {
-        this.valueTot = vale;
-    }
-
-    /**
-     * @return the date
-     */
-    public String getDate() {
-        return saleDate;
-    }
-
-    /**
-     * @param date the date to set
-     */
-    public void setDate(String date) {
-        this.saleDate = date;
-    }
+   
 }

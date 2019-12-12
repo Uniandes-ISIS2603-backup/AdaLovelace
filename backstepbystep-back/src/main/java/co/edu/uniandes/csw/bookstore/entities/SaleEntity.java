@@ -32,34 +32,19 @@ public class SaleEntity extends BaseEntity implements Serializable{
     @PodamExclude
     @ManyToOne
     private ClientEntity client;
-   
 
     /**
-     * @return the value
+     * @return the valueTot
      */
-    public int getValue() {
+    public int getValueTot() {
         return valueTot;
     }
 
     /**
-     * @param value the value to set
+     * @return the saleDate
      */
-    public void setValue(int value) {
-        this.valueTot = value;
-    }
-
-    /**
-     * @return the date
-     */
-    public String getDate() {
+    public String getSaleDate() {
         return saleDate;
-    }
-
-    /**
-     * @param date the date to set
-     */
-    public void setDate(String date) {
-        this.saleDate = date;
     }
 
     /**
@@ -70,18 +55,40 @@ public class SaleEntity extends BaseEntity implements Serializable{
     }
 
     /**
+     * @return the client
+     */
+    public ClientEntity getClient() {
+        return client;
+    }
+
+    /**
+     * @param valueTot the valueTot to set
+     */
+    public void setValueTot(int valueTot) {
+        this.valueTot = valueTot;
+    }
+
+    /**
+     * @param saleDate the saleDate to set
+     */
+    public void setSaleDate(String saleDate) {
+        this.saleDate = saleDate;
+    }
+
+    /**
      * @param books the books to set
      */
     public void setBooks(List<BookEntity> books) {
         this.books = books;
     }
-    
-    public ClientEntity getClient(){
-        return client;
-        
-    }
-    
-    public void setClient(ClientEntity client){
+
+    /**
+     * @param client the client to set
+     */
+    public void setClient(ClientEntity client) {
         this.client = client;
     }
+   
+
+    
 }

@@ -38,10 +38,10 @@ public class SaleLogic {
         if (saleEntity.getClient() == null || clientPersistence.find(saleEntity.getClient().getId()) == null) {
             throw new BusinessLogicException("El client es vacìo");
         }
-        if (saleEntity.getValue() < 0) {
+        if (saleEntity.getValueTot()< 0) {
             throw new BusinessLogicException("El valor total es inválido");
         }
-        if(saleEntity.getDate() == null){
+        if(saleEntity.getSaleDate()== null){
             throw new BusinessLogicException("Fecha de venta es vacía");
         }
         salePersistence.create(saleEntity);
