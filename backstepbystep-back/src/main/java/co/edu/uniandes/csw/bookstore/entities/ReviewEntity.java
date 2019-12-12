@@ -77,7 +77,7 @@ public class ReviewEntity extends BaseEntity implements Serializable {
      *
      * @param source La nueva fuente
      */
-    public void setSource(int score) {
+    public void setScore(int score) {
         this.score = score;
     }
 
