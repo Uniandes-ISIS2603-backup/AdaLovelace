@@ -35,16 +35,14 @@ public class SaleLogic {
             
     public SaleEntity createSale(SaleEntity saleEntity) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "Inicia proceso de creación de la venta");
-        if (saleEntity.getClient() == null || clientPersistence.find(saleEntity.getClient().getId()) == null) {
-            throw new BusinessLogicException("El client es vacìo");
-        }
+ 
         if (saleEntity.getValueTot()< 0) {
             throw new BusinessLogicException("El valor total es inválido");
         }
         if(saleEntity.getSaleDate()== null){
             throw new BusinessLogicException("Fecha de venta es vacía");
         }
-        salePersistence.create(saleEntity);
+        saleEntity = salePersistence.create(saleEntity);
         LOGGER.log(Level.INFO, "Termina proceso de creación de venta");
         return saleEntity;
     }

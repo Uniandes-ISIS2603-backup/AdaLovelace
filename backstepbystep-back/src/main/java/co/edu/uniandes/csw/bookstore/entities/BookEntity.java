@@ -66,6 +66,7 @@ public class BookEntity extends BaseEntity implements Serializable {
     @OneToMany(mappedBy = "book", cascade = CascadeType.PERSIST, orphanRemoval = true)
     private List<ReviewEntity> reviews = new ArrayList<ReviewEntity>();
 
+   
     private String author;
 
     public String getGenre() {

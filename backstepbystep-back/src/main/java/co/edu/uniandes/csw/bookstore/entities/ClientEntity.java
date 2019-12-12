@@ -7,6 +7,7 @@ package co.edu.uniandes.csw.bookstore.entities;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
@@ -22,7 +23,7 @@ public class ClientEntity extends BaseEntity{
     private String documentNumber;
     private String directionResidence;
     
-@OneToMany(mappedBy = "client")
+@OneToMany(mappedBy = "client", cascade = CascadeType.PERSIST, orphanRemoval = true)
     private List<SaleEntity> compras = new ArrayList<SaleEntity>();
     public ClientEntity()
     {
