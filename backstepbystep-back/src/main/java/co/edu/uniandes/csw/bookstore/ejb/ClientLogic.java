@@ -7,7 +7,6 @@ package co.edu.uniandes.csw.bookstore.ejb;
 
 import co.edu.uniandes.csw.bookstore.entities.ClientEntity;
 import co.edu.uniandes.csw.bookstore.exceptions.BusinessLogicException;
-import co.edu.uniandes.csw.bookstore.persistence.AuthorPersistence;
 import co.edu.uniandes.csw.bookstore.persistence.ClientPersistence;
 import java.util.List;
 import java.util.logging.Level;
@@ -25,8 +24,37 @@ public class ClientLogic {
 @Inject
     private ClientPersistence persistence;
 
- public ClientEntity createClient(ClientEntity clientEntity) {
+ public ClientEntity createClient(ClientEntity clientEntity) throws BusinessLogicException{
         LOGGER.log(Level.INFO, "Inicia proceso de creación del cliente");
+        if(clientEntity.getAccountNumber()==null)
+        {
+            throw new BusinessLogicException("El numero de cuenta es invalido");
+        }
+        if(clientEntity.getDirectionResidence()==null)
+        {
+            throw new BusinessLogicException("La direccion es invalido");
+
+        }
+        if(clientEntity.getDocumentNumber()==null)
+        {
+            throw new BusinessLogicException("El numero de cuenta es invalido");
+   
+        }
+        if(clientEntity.getMail()==null)
+        {
+            throw new BusinessLogicException("El mail es invalido");
+
+        }
+        if(clientEntity.getName()==null)
+        {
+            throw new BusinessLogicException("El mail es invalido");
+
+        }
+        if(clientEntity.getPhoneNumber()==null)
+        {
+            throw new BusinessLogicException("El numero de telefono es invalido");
+
+        }
         ClientEntity newClientEntity = persistence.create(clientEntity);
         LOGGER.log(Level.INFO, "Termina proceso de creación del cliente");
         return newClientEntity;
