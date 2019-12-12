@@ -30,11 +30,11 @@ public class SaleLogic {
     private SalePersistence persistence;
     
    
-    public SaleEntity createBook(BookEntity saleEntity) throws BusinessLogicException {
+    public SaleEntity createBook(SaleEntity saleEntity) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "Inicia proceso de creación de la venta");
-        if (saleEntity.getClient() == null) {
-            throw new BusinessLogicException("El client es vacìo");
-        }
+        //if (saleEntity.getClient() == null) {
+        //    throw new BusinessLogicException("El client es vacìo");
+        //}
         if (!validateISBN(bookEntity.getIsbn())) {
             throw new BusinessLogicException("El ISBN es inválido");
         }
