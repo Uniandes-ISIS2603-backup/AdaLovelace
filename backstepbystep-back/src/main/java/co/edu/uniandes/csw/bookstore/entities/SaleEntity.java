@@ -22,10 +22,10 @@ import javax.persistence.TemporalType;
 public class SaleEntity extends BaseEntity {
     
     
-    private int value;
+    private int valueTot;
     
     @Temporal(TemporalType.DATE)
-    private Date date;
+    private Date saleDate;
     
     @OneToMany
     private List<BookEntity> books = new ArrayList<>();
@@ -38,28 +38,28 @@ public class SaleEntity extends BaseEntity {
      * @return the value
      */
     public int getValue() {
-        return value;
+        return valueTot;
     }
 
     /**
      * @param value the value to set
      */
     public void setValue(int value) {
-        this.value = value;
+        this.valueTot = value;
     }
 
     /**
      * @return the date
      */
     public Date getDate() {
-        return date;
+        return saleDate;
     }
 
     /**
      * @param date the date to set
      */
     public void setDate(Date date) {
-        this.date = date;
+        this.saleDate = date;
     }
 
     /**
