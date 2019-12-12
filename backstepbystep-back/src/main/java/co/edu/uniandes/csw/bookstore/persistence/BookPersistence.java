@@ -135,4 +135,12 @@ public class BookPersistence {
         LOGGER.log(Level.INFO, "Saliendo de consultar libros por isbn ", isbn);
         return result;
     }
+    
+    public List<BookEntity>findByGenre(String genre)
+    {
+     TypedQuery query = em.createQuery("Select e From BookEntity e where e.genre = :genre", BookEntity.class);   
+     query = query.setParameter("genre", genre);
+      List<BookEntity> sameGenre = query.getResultList();
+        return sameGenre;
+    }
 }
