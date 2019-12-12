@@ -29,7 +29,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author Daniel B etancurth Dorado
  */
-@Path("/clients")
+@Path("clients")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 @RequestScoped
@@ -41,7 +41,7 @@ public class ClientResource {
     @POST
     public ClientDTO createClient(ClientDTO client) {
         LOGGER.log(Level.INFO, "AuthorResource createAuthor: input: {0}", client);
-       ClientDTO clientDTO= null;
+       ClientDTO clientDTO = null;
         try{
          clientDTO = new ClientDTO(clientLogic.createClient(client.toEntity()));
         LOGGER.log(Level.INFO, "AuthorResource createAuthor: output: {0}", client);
@@ -79,4 +79,4 @@ public class ClientResource {
         }
         return list;
     }
-}
+} 
