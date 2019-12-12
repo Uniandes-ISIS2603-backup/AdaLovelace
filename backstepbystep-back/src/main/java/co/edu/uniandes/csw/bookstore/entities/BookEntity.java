@@ -45,6 +45,7 @@ import uk.co.jemos.podam.common.PodamExclude;
 public class BookEntity extends BaseEntity implements Serializable {
 
     private String name;
+    private Integer price;
     private String isbn;
     private String image;
     private String publishDate;
@@ -73,6 +74,14 @@ public class BookEntity extends BaseEntity implements Serializable {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+    
+    public Integer getPrice() {
+        return price;
+    }
+    
+    public void setPrice(Integer price) {
+        this.price = price;
     }
     
     

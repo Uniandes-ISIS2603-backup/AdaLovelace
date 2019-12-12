@@ -100,6 +100,17 @@ public class BookResource {
     @GET
     public List<BookDetailDTO> getBooks() {
         LOGGER.info("BookResource getBooks: input: void");
+        /*List<BookEntity> books1 = bookLogic.getBooks();
+        ArrayList<BookEntity> books = new ArrayList<BookEntity>();
+        int i = 0;
+        for(BookEntity book : books1) {
+            if(i < 50) {
+                i++;
+                books.add(book);
+            } else {
+                break;
+            }
+        }*/
         List<BookDetailDTO> listaBooks = listEntity2DetailDTO(bookLogic.getBooks());
         LOGGER.log(Level.INFO, "BookResource getBooks: output: {0}", listaBooks);
         return listaBooks;
