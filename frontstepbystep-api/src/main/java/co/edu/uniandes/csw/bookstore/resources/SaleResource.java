@@ -5,17 +5,11 @@
  */
 package co.edu.uniandes.csw.bookstore.resources;
 
-import co.edu.uniandes.csw.bookstore.dtos.BookDTO;
-import co.edu.uniandes.csw.bookstore.dtos.BookDetailDTO;
 import co.edu.uniandes.csw.bookstore.dtos.SaleDTO;
 import co.edu.uniandes.csw.bookstore.dtos.SaleDetailDTO;
-import co.edu.uniandes.csw.bookstore.ejb.BookEditorialLogic;
 import co.edu.uniandes.csw.bookstore.ejb.BookLogic;
-import co.edu.uniandes.csw.bookstore.ejb.ClientLogic;
 import co.edu.uniandes.csw.bookstore.ejb.SalesClientLogic;
-import co.edu.uniandes.csw.bookstore.ejb.EditorialLogic;
 import co.edu.uniandes.csw.bookstore.ejb.SaleLogic;
-import co.edu.uniandes.csw.bookstore.entities.BookEntity;
 import co.edu.uniandes.csw.bookstore.entities.SaleEntity;
 import co.edu.uniandes.csw.bookstore.exceptions.BusinessLogicException;
 import java.util.ArrayList;
@@ -25,7 +19,6 @@ import java.util.logging.Logger;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
